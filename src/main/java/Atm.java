@@ -2,10 +2,11 @@
 public class Atm {
 
     String requiredPin;
-    double balance = 73900;
+    double beginningBalance;
 
-    public Atm(String pin) {
+    public Atm(String pin, double bal) {
         requiredPin = pin;
+        beginningBalance = bal;
     }
 
     public boolean allowAccess(String enteredPin) {
@@ -13,6 +14,14 @@ public class Atm {
     }
 
     public void deposit(double amount) {
-        balance += amount;
+        beginningBalance += amount;
+    }
+
+    public void withdraw(double amount) {
+        System.out.println(beginningBalance -= amount);
+    }
+
+    public double accountBalance() {
+        return beginningBalance;
     }
 }
